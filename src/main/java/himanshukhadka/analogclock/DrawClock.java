@@ -7,8 +7,8 @@ import javafx.scene.shape.Circle;
 public class DrawClock extends Pane {
     public DrawClock(){
         Circle circle = new Circle();
-        circle.centerXProperty().bind(widthProperty().divide(2).subtract(50));
-        circle.centerYProperty().bind(heightProperty().divide(2).subtract(50));
+        circle.centerXProperty().bind(widthProperty().divide(2));
+        circle.centerYProperty().bind(heightProperty().divide(2));
         circle.setRadius(200);
         circle.setStroke(Color.BLACK);
         circle.setStrokeWidth(4);
