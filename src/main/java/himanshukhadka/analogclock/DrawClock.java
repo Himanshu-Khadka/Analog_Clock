@@ -3,6 +3,7 @@ package himanshukhadka.analogclock;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
 
 public class DrawClock extends Pane {
     public DrawClock(){
@@ -14,6 +15,16 @@ public class DrawClock extends Pane {
         circle.setStrokeWidth(4);
         circle.setFill(Color.WHITE);
 
-        getChildren().add(circle);
+        Line secondArm = new Line();
+        secondArm.startXProperty().bind(widthProperty().divide(2));
+        secondArm.startYProperty().bind(heightProperty().divide(2));
+        secondArm.setStrokeWidth(3);
+        secondArm.setStroke(Color.BLACK);
+
+
+
+        getChildren().addAll(circle,secondArm);
+
+
     }
 }
