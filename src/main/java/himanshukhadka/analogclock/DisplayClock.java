@@ -1,6 +1,8 @@
 package himanshukhadka.analogclock;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
@@ -21,6 +23,8 @@ public class DisplayClock extends Application {
 
         Text timeInText = new Text(timeString);
         mainPane.setBottom(timeInText);
+        mainPane.setPadding(new Insets(10, 10,10,10));
+        BorderPane.setAlignment(timeInText, Pos.CENTER);
 
         Scene scene = new Scene(mainPane,500,500);
         stage.setTitle("Analog Clock");
