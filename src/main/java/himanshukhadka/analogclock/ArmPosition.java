@@ -21,6 +21,28 @@ public class ArmPosition {
         return SECOND;
     }
 
+    public double getEndXSecond(double centerX, double lengthOfArm){
+        return centerX + lengthOfArm * Math.sin(getSecond()*(Math.PI/60));
+    }
+    public double getEndYSecond(double centerY, double lengthOfArm){
+        return centerY + lengthOfArm * Math.cos(getSecond()*(Math.PI/60));
+    }
+
+    public double getEndXMinute(double centerX, double lengthOfArm){
+        return centerX + lengthOfArm * Math.sin((getMinute()+getSecond()/60)*(Math.PI/60));
+    }
+    public double getEndYMinute(double centerY, double lengthOfArm){
+        return centerY + lengthOfArm * Math.cos((getMinute()+getSecond()/60)*(Math.PI/60));
+    }
+
+    public double getEndXHour(double centerX, double lengthOfArm){
+        return centerX + lengthOfArm * Math.sin((getHour()+getMinute()/60+getSecond()/(60*60))*(Math.PI/60));
+    }
+    public double getEndYHour(double centerY, double lengthOfArm){
+        return centerY + lengthOfArm * Math.cos((getHour()+getMinute()/60+getSecond()/(60*60))*(Math.PI/60));
+    }
+
+
     @Override
     public String toString() {
         return HOUR +":"+MINUTE+":"+SECOND;
