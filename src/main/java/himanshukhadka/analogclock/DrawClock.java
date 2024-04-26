@@ -13,5 +13,6 @@ public class DrawClock extends Pane {
         circle.setStrokeWidth(4);
         circle.setFill(Color.WHITE);
 
+        getChildren().add(circle);
     }
 }
