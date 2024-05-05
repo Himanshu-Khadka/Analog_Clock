@@ -7,7 +7,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.util.Duration;
-
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -16,20 +15,24 @@ public class DrawClock extends Pane {
     private final double radius = 200;
     private Timeline timeline;
 
+    //DrawClock constructor
     public DrawClock() {
-        Circle mainCircle = new Circle(radius);
+        Circle mainCircle = new Circle(radius); //Creates circle with given radius
+        //binding circle radius x and y to width and height property of the pane
         mainCircle.centerXProperty().bind(widthProperty().divide(2));
         mainCircle.centerYProperty().bind(heightProperty().divide(2));
+        //Setting up circle Color and stroke properties
         mainCircle.setFill(Color.WHITE);
         mainCircle.setStroke(Color.BLACK);
         mainCircle.setStrokeWidth(5);
-        getChildren().add(mainCircle);
 
+        getChildren().add(mainCircle);//Adding circle to the pane
+        //Adding lines to the pane
         secondArm = new Line();
         minuteArm = new Line();
         hourArm = new Line();
         getChildren().addAll(secondArm, minuteArm, hourArm);
-
+        // Setting up clock hands and starting clock
         setupClockHands();
         startClock();
     }
