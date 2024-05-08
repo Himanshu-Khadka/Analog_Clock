@@ -1,4 +1,5 @@
 # Analog Clock
+<img width="599" alt="Screenshot 2024-05-08 at 1 08 29 AM" src="https://github.com/Himanshu-Khadka/Analog_Clock/assets/130685429/6b0769e0-f3ba-4364-8727-211ab878581f">
 
 The `Clock` class is designed to display an analog clock using JavaFX. This clock consists of a circle representing the clock face, with three hands indicating the hour, minute, and second.
 
